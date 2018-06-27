@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,10 +40,10 @@ public class boardSetup : MonoBehaviour {
                 starter[i].color = Color.blue;
         }
 
-	//create new connection for database
-	Connector test = new Connector();
-		
-	for (int i = 0; i < 25; i++)
+        //creates new database connection
+        Connector test = new Connector();
+
+        for (int i = 0; i < 25; i++)
         {
             //sets board image
             int randCol = RandomColor();
@@ -60,7 +60,7 @@ public class boardSetup : MonoBehaviour {
             //sets board words
             word[i] = GameObject.Find("word" + i.ToString()).GetComponent<Text>();
             word[i].text = test.getCard();
-        	}
+        }
 	}
 	
 	// Update is called once per frame
