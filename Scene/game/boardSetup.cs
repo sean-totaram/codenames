@@ -40,9 +40,11 @@ public class boardSetup : MonoBehaviour {
                 starter[i].color = Color.blue;
         }
 
-
-            for (int i = 0; i < 25; i++)
-            {
+	//create new connection for database
+	Connector test = new Connector();
+		
+	for (int i = 0; i < 25; i++)
+        {
             //sets board image
             int randCol = RandomColor();
             tileColor[i] = GameObject.Find("image" + i.ToString()).GetComponent<Image>();
@@ -56,10 +58,9 @@ public class boardSetup : MonoBehaviour {
                 tileColor[i].color = Color.black;
 
             //sets board words
-            Connector test = new Connector();
             word[i] = GameObject.Find("word" + i.ToString()).GetComponent<Text>();
             word[i].text = test.getCard();
-            }
+        	}
 	}
 	
 	// Update is called once per frame
